@@ -18,8 +18,8 @@
     <orderEntry type="library" scope="PROVIDED" name="ZenTest (v4.6.2, RVM: ruby-1.9.2-p180 [sample-app]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sqlite3 (v1.3.3, RVM: ruby-1.9.2-p180 [sample-app]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="nokogiri (v1.5.0, RVM: ruby-1.9.2-p180 [sample-app]) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="gherkin (v2.4.1, RVM: ruby-1.9.2-p180 [sample-app]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rspec-expectations (v2.6.0, RVM: ruby-1.9.2-p180 [sample-app]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="gherkin (v2.4.1, RVM: ruby-1.9.2-p180 [sample-app]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="haml (v3.1.2, RVM: ruby-1.9.2-p180 [sample-app]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="builder (v2.1.2, RVM: ruby-1.9.2-p180 [sample-app]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="cucumber (v1.0.0, RVM: ruby-1.9.2-p180 [sample-app]) [gem]" level="application" />
@@ -58,21 +58,21 @@
     <orderEntry type="library" scope="PROVIDED" name="webrat (v0.7.1, RVM: ruby-1.9.2-p180 [sample-app]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="activemodel (v3.0.9, RVM: ruby-1.9.2-p180 [sample-app]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="diff-lcs (v1.1.2, RVM: ruby-1.9.2-p180 [sample-app]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="childprocess (v0.1.9, RVM: ruby-1.9.2-p180 [sample-app]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="polyglot (v0.3.2, RVM: ruby-1.9.2-p180 [sample-app]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="factory_girl_rails (v1.1.0, RVM: ruby-1.9.2-p180 [sample-app]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rspec-mocks (v2.6.0, RVM: ruby-1.9.2-p180 [sample-app]) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="childprocess (v0.1.9, RVM: ruby-1.9.2-p180 [sample-app]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rspec (v2.6.0, RVM: ruby-1.9.2-p180 [sample-app]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="abstract (v1.0.0, RVM: ruby-1.9.2-p180 [sample-app]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="selenium-webdriver (v0.2.2, RVM: ruby-1.9.2-p180 [sample-app]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="launchy (v0.4.0, RVM: ruby-1.9.2-p180 [sample-app]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="actionmailer (v3.0.9, RVM: ruby-1.9.2-p180 [sample-app]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="autotest (v4.4.6, RVM: ruby-1.9.2-p180 [sample-app]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="term-ansicolor (v1.0.5, RVM: ruby-1.9.2-p180 [sample-app]) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="actionmailer (v3.0.9, RVM: ruby-1.9.2-p180 [sample-app]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack-test (v0.5.7, RVM: ruby-1.9.2-p180 [sample-app]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ffi (v1.0.9, RVM: ruby-1.9.2-p180 [sample-app]) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="configuration (v1.3.1, RVM: ruby-1.9.2-p180 [sample-app]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rdoc (v3.9.3, RVM: ruby-1.9.2-p180 [sample-app]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="configuration (v1.3.1, RVM: ruby-1.9.2-p180 [sample-app]) [gem]" level="application" />
   </component>
   <component name="RModuleSettingsStorage">
     <LOAD_PATH number="0" />
