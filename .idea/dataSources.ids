@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><component name="dataSourceStorage">
+  <data-source source="LOCAL" name="Rails sample_app: development" product="" version="" jdbc-version="" driver-version="" uuid="04a91638-807b-4b3f-84f9-d8ca489a0ac5">
+    <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+    <jdbc-url>jdbc:sqlite:/home/heidini/workspace/rail3tutorial/sample_app/db/development.sqlite3</jdbc-url>
+    <libraries>
+      <library>
+        <url>file://$USER_HOME$/.RubyMine32/config/jdbc-drivers/zentus-sqlite-license.txt</url>
+      </library>
+      <library>
+        <url>jar://$USER_HOME$/.RubyMine32/config/jdbc-drivers/sqlitejdbc-v056.jar!/</url>
+      </library>
+    </libraries>
+  </data-source>
+  <data-source source="LOCAL" name="Rails sample_app: test" product="" version="" jdbc-version="" driver-version="" uuid="db864cfb-756b-4c1e-8ada-0b575a504cb3">
+    <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+    <jdbc-url>jdbc:sqlite:/home/heidini/workspace/rail3tutorial/sample_app/db/test.sqlite3</jdbc-url>
+    <libraries>
+      <library>
+        <url>file://$USER_HOME$/.RubyMine32/config/jdbc-drivers/zentus-sqlite-license.txt</url>
+      </library>
+      <library>
+        <url>jar://$USER_HOME$/.RubyMine32/config/jdbc-drivers/sqlitejdbc-v056.jar!/</url>
+      </library>
+    </libraries>
+  </data-source>
+  <data-source source="LOCAL" name="Rails sample_app: cucumber" product="" version="" jdbc-version="" driver-version="" uuid="82c67e79-bf6e-41af-ae07-4359e96ec247">
+    <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+    <jdbc-url>jdbc:sqlite:/home/heidini/workspace/rail3tutorial/sample_app/db/test.sqlite3</jdbc-url>
+    <libraries>
+      <library>
+        <url>file://$USER_HOME$/.RubyMine32/config/jdbc-drivers/zentus-sqlite-license.txt</url>
+      </library>
+      <library>
+        <url>file://$USER_HOME$/.RubyMine32/config/jdbc-drivers/sqlitejdbc-v056.jar</url>
+      </library>
+    </libraries>
+  </data-source>
+</component>
