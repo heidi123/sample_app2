@@ -36,7 +36,7 @@ describe UsersController do
         response.should have_selector("title", :content => "All users")
       end
 
-       it "should have an element for each user" do
+      it "should have an element for each user" do
         get :index
         @users[0..2].each do |user|
           response.should have_selector("li", :content => user.name)
@@ -48,11 +48,49 @@ describe UsersController do
         response.should have_selector("div.pagination")
         response.should have_selector("span.disabled", :content => "Previous")
         response.should have_selector("a", :href => "/users?page=2",
-                                           :content => "2")
+                                      :content => "2")
         response.should have_selector("a", :href => "/users?page=2",
-                                           :content => "Next")
+                                      :content => "Next")
+      end
+
+
+    end
+
+    describe "delete links" do
+      before (:each) do
+        @user = test_sign_in(Factory(:user))
+        second = Factory(:user, :name => "Bob", :email => "another@example.com")
+        third = Factory(:user, :name => "Ben", :email => "another@example.net")
+        @users = [@user, second, third]
+      end
+
+      describe "for admin users" do
+        before(:each) do
+          @admin = Factory(:user, :email => "admin@example.com", :admin => true)
+          test_sign_in(@admin)
+        end
+
+        it "should have the delete links fon other users" do
+          get :index
+          response.should have_selector("a", :href => "/users/2",
+                                        :content => "delete")
+        end
+
+        it "should not have the delete links fon himself" do
+          get :index
+          response.should_not have_selector("a", :href => "/users/#{@admin.id}",
+                                        :content => "delete")
+        end
+      end
+      describe "for non-admin users" do
+        it "should not have the delete links for non-admin users" do
+          get :index
+          response.should_not have_selector("a", :href => "/users/2",
+                                            :content => "delete")
+        end
       end
     end
+
   end
 
   describe "GET 'show'" do
@@ -82,6 +120,13 @@ describe UsersController do
       response.should have_selector("h1>img", :class => "gravatar")
     end
 
+    it "should show the user's microposts" do
+      mp1 = Factory(:micropost, :user => @user, :content => "Foo bar")
+      mp2 = Factory(:micropost, :user => @user, :content => "Baz quux")
+      get :show, :id => @user
+      response.should have_selector("span.content", :content => mp1.content)
+      response.should have_selector("span.content", :content => mp2.content)
+    end
   end
 
   describe "GET 'new'" do
@@ -115,6 +160,8 @@ describe UsersController do
       get :new
       response.should have_selector("input[name='user[password_confirmation]'][type='password']")
     end
+
+
   end
 
   describe "POST 'create'" do
@@ -310,8 +357,8 @@ describe UsersController do
     describe "as an admin user" do
 
       before(:each) do
-        admin = Factory(:user, :email => "admin@example.com", :admin => true)
-        test_sign_in(admin)
+        @admin = Factory(:user, :email => "admin@example.com", :admin => true)
+        test_sign_in(@admin)
       end
 
       it "should destroy the user" do
@@ -324,6 +371,44 @@ describe UsersController do
         delete :destroy, :id => @user
         response.should redirect_to(users_path)
       end
+
+      it "should not destroy himself" do
+        lambda do
+          delete :destroy, :id => @admin
+        end.should_not change(User, :count).by(-1)
+      end
+    end
+  end
+
+  describe "access of new/create pages" do
+
+    describe "for signed-in users" do
+
+      before(:each) do
+        user = Factory(:user, :email => "user@example.net")
+        test_sign_in(user)
+      end
+
+      it "should redirect to root for 'new'" do
+        get :new
+        response.should redirect_to(root_path)
+      end
+
+      it "should rediect to root for 'create'" do
+        post :create, :user => {}
+        response.should redirect_to(root_path)
+      end
+    end
+
+  end
+  describe "micropost associations" do
+
+    before(:each) do
+      @user = User.create(@attr)
+    end
+
+    it "should have a microposts attribute" do
+      @user.should respond_to(:microposts)
     end
   end
 end
