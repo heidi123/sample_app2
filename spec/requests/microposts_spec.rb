@@ -3,10 +3,10 @@ require 'spec_helper'
 describe "Microposts" do
 
   before(:each) do
-    user = Factory(:user)
+    @user = Factory(:user)
     visit signin_path
-    fill_in :email,    :with => user.email
-    fill_in :password, :with => user.password
+    fill_in :email,    :with => @user.email
+    fill_in :password, :with => @user.password
     click_button
   end
   
@@ -36,6 +36,29 @@ describe "Microposts" do
           response.should have_selector("span.content", :content => content)
         end.should change(Micropost, :count).by(1)
       end
+
+      describe "sibebar microposts" do
+        before(:each) do
+          visit root_path
+        end
+
+        it "should have the sidebar" do
+          response.should have_selector("td.sidebar.round", :content => @user.name)
+        end
+
+        it "should pluraize micropost counts" do
+          do_micropost
+          response.should have_selector("span.microposts"), :content => "1 micropost"
+          do_micropost
+          response.should have_selector("span.microposts"), :content => "2 microposts"
+        end
+
+        def do_micropost
+          fill_in :micropost_content, :with =>  "Lorem ipsum dolor sit amet"
+          click_button
+        end
+      end
+
     end
   end
 end
