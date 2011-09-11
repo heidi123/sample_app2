@@ -1,0 +1,11 @@
+- @user ||= current_user
+.stats
+  %table(summary="User stats")
+    %tr
+      %td
+        %a( href="#{following_user_path(@user)}")
+          =content_tag(:span, "#{@user.following.count} following", :id => "following", :class => "stat")
+      %td
+        %a(href="#{followers_user_path(@user)}")
+          %span(id="followers" class="stat")
+            = pluralize(@user.followers.count, "follower")
