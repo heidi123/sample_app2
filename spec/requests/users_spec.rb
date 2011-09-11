@@ -60,5 +60,30 @@ describe "Users" do
       end
     end
   end
+
+   describe "follow/unfollow" do
+      before(:each) do
+        @user = Factory(:user)
+        @other_user = Factory(:user, :email => Factory.next(:email))
+        integration_sign_in @user
+      end
+     it "should show following and follower count" do
+        response.should have_selector('a', :href => following_user_path(@user),
+                                           :content => "0 following")
+        response.should have_selector('a', :href => followers_user_path(@user),
+                                           :content => "0 followers")
+     end
+
+     it "should follow/unfollow user" do
+       visit  user_path(@other_user)
+       click_button "Follow"
+       response.should have_selector('a', :href => followers_user_path(@other_user),
+                                           :content => "1 follower")
+       click_button "Unfollow"
+       response.should have_selector('a', :href => followers_user_path(@other_user),
+                                           :content => "0 followers")
+     end
+  end
+
 end
 

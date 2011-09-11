@@ -6,5 +6,6 @@
         = render 'shared/micropost_form'
         = render 'shared/feed'
       %td.sidebar.round
+        - @user = current_user
         = render 'shared/user_info'
         = render 'shared/stats'

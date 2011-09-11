@@ -237,6 +237,19 @@ describe User do
       @user.follow!(@followed)
       @followed.followers.should include(@user)
     end
+
+    it "should destroy the associated follower" do
+      @user.follow!(@followed)
+      @user.destroy
+      @followed.followers.should_not include(@user)
+    end
+
+    it "should destroy the associated following" do
+      @user.follow!(@followed)
+      @followed.destroy
+      @user.should_not be_following(@followed)
+    end
+
   end
 
 

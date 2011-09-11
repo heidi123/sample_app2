@@ -10,16 +10,5 @@
           = render @microposts
           = will_paginate @microposts
     %td.sidebar.round
-      %strong
-        Name
-      = @user.name
-      %br
-      %strong
-        URL
-      = link_to user_path(@user), @use
-      %br
-      %strong
-        Microposts
-        = @user.microposts.count
-      = render 'shared/stats'
+      = render 'user_stat'
 

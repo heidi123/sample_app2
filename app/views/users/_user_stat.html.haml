@@ -1,0 +1,12 @@
+%strong
+  Name
+= @user.name
+%br
+%strong
+  URL
+= link_to user_path(@user), @user
+%br
+%strong
+  Microposts
+= @user.microposts.count
+= render 'shared/stats'
